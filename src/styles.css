@@ -1,0 +1,24 @@
+html, body {
+	background-color:#fff;
+	margin: 0;
+	border: 0;
+	padding: 0;
+	height: 100%;
+}
+
+#wrapper {
+	background-color:#FFD04F;
+}
+
+.clear {
+	clear: both;
+}
+
+
+#infoPanel {
+	padding: 10px 20px;
+	margin: 20px 20px 0 20px;
+  /*7AA5B7*/
+	background: #FF8400;
+  font-family: 'Roboto', sans-serif;
+}

@@ -1,13 +1,15 @@
 #GameDevCalculator {
 	width: 809px;
 	margin: 0px auto;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Roboto', sans-serif;
+
 	/*font-family: Arial, Helvetica, sans-serif;*/
 }
 
 /* Tables */
 
 #GameDevCalculator table {
+
 	background-color: #D1DBBD; /*D1DBBD*/
 }
 
@@ -24,12 +26,13 @@
 
 #GameDevCalculator select,
 #GameDevCalculator input {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Roboto', sans-serif;
 }
 
 #calcFieldset {
 	width: 700px;
 	margin: 0 auto 5px auto;
+	padding: 10px;
 	background-color: #D1DBBD; /*D1DBBD*/
 }
 
@@ -122,16 +125,22 @@
 	height: 20px;
 }
 
-.emptySliderTrack { background: #D7EDFF; }
+.emptySliderTrack { background: #d9d8e6; }
 .redSliderTrack { background: #FF7575; }
 .greenSliderTrack { background: #80FF80; }
 .blueSliderTrack { background: #8080FF; }
+.cyanSliderTrack { background: #80FFFF; }
+.darkGreenSliderTrack { background: #008080; }
+
 
 .sliderTab {
 	border: 1px solid #6A6AFF;
 	background: white;
 	width: 20px;
 	height: 14px;
+	font-size: 10px;
+	top: -3px;
+ 	color:"red";
 }
 	
 /* old games table css */

@@ -11,35 +11,23 @@
 
     <link rel="icon" type="image/png" href="favicon.png" />
 
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="Game%20Dev%20Tycoon%20Calculator_files/gdtcalc.css">
-    <link rel="stylesheet" type="text/css" href="Game%20Dev%20Tycoon%20Calculator_files/styles.css">
-    <link type="text/css" rel="stylesheet" href="Game%20Dev%20Tycoon%20Calculator_files/banner-styles.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="src/gdtcalc.css">
+    <link rel="stylesheet" type="text/css" href="src/styles.css">
 
-    <script type="text/javascript" src="Game%20Dev%20Tycoon%20Calculator_files/analytics.js"></script>
-    <script src="Game%20Dev%20Tycoon%20Calculator_files/jread" type="text/javascript"></script>
-    <script src="Game%20Dev%20Tycoon%20Calculator_files/jquery_002.js"></script>
-    <script type="text/javascript" src="Game%20Dev%20Tycoon%20Calculator_files/jquery_003.js"></script>
-    <script type="text/javascript" src="Game%20Dev%20Tycoon%20Calculator_files/gdtcalc.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="src/jquery_003.js"></script>
+    <script type="text/javascript" src="src/gdtcalc.js"></script>
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-        crossorigin="anonymous">
-    
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-49256271-4"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-      gtag('config', 'UA-49256271-4');
-    </script>
+
 </head>
 
 <body>
-    <a href="https://github.com/rollersteaam/gdt-calc"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"
-            alt="Fork me on GitHub"></a>
+    <a href="https://github.com/rondlite/gdt-calc"><img style="position: absolute; top: 0; right: 0; border: 0;"
+            src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
 
     <section>
         <div id="wrapper" class="container">
@@ -52,12 +40,13 @@
             <div id="GameDevCalculator"></div>
 
             <div id="infoPanel">
-                <h1>Game Dev Tycoon Calculator v1.1</h1>
+                <h1>Game Dev Tycoon Calculator v2.0</h1>
                 <h2>By Cosmic Websites / Revised by R-SAAM Development Groups</h2>
+                <h3>Recreated for 1.6.3 by Ron D. Lite</h3>
             </div>
 
             <div id="infoPanel">
-                <h3>Updated for game version: 1.4.3</h3>
+                <h3>Updated for game version: 1.6.3</h3>
 
                 <p>
                     This tool is designed to help you get high scores for every game you make. The way the game works
@@ -74,45 +63,21 @@
                     idea to leave some bugs in so that beating this score wont be as hard.
                 </p>
 
-                <p>
-                    Since Cosmic Websites seemed to stop hosting this calculator, I decided to use the Wayback Machine
-                    and
-                    revive the website and host it on my own service. Any changes that you want me to perform can be
-                    done,
-                    I'm a junior freelancer, so it is possible for me to make these changes.
-                </p>
+
 
                 <p>
                     For more info on how the game works go to <a href="http://gamedevtycoon.wikia.com/">the wiki</a>.
-                    All
-                    credit for finding the formulas used in making this app goes to them. Additional credit goes to <b>Cosmic
+                    Most
+                    credit for finding the formulas used in making this app goes to them. Additional credit goes to
+                    <b>Cosmic
                         Websites</b> for <i>originally creating the calculator and the general website,</i> and R-SAAM
-                    Development Groups for revising website design and re-hosting the website.</i>
+                    Development Groups for revising website design and re-hosting the website.</i> <b>Ron D. Lite did
+                        full data mining on version 1.6.3</b>
+
                 </p>
             </div>
 
-            <div id="infoPanel">
-                <h3>This calculator is constantly being updated. If you have a question or improvement suggestion,
-                    leave a
-                    comment below.</h3>
-            </div>
 
-            <!-- Comment Section Script -->
-            <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Feedback System</a> is loading
-                comments...</div>
-            <link rel="stylesheet" type="text/css" href="//www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
-            <script type="text/javascript" id="hcb"> /*<!--*/ if (!window.hcb_user) { hcb_user = {}; } (function () { var s = document.createElement("script"), l = (hcb_user.PAGE || "" + window.location), h = "//www.htmlcommentbox.com"; s.setAttribute("type", "text/javascript"); s.setAttribute("src", h + "/jread?page=" + encodeURIComponent(l).replace("+", "%2B") + "&mod=%241%24wq1rdBcg%24luX1bWlrE0PbqbKYwoxIF%2F" + "&opts=16862&num=10"); if (typeof s != "undefined") document.getElementsByTagName("head")[0].appendChild(s); })(); /*-->*/ </script>
-            <!-- Add some style... c-: -->
-            <style>
-                #HCB_comment_box #hcb_form_content,
-                #HCB_comment_box #hcb_form_email,
-                #HCB_comment_box #hcb_form_name,
-                #HCB_comment_box #hcb_form_website {
-                    background-color: #ffd;
-                    /*Background Tint*/
-                }
-            </style>
-            <!-- Comment Section Script -->
         </div>
     </section>
 </body>
