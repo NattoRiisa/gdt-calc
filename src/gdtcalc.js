@@ -115,13 +115,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const root = ensureRoot();
 
   // If already present, bail (avoid duplicating)
-  if (document.getElementById("gdtcalc-full")) {
+  if (document.getElementById("gdtcalc")) {
     return;
   }
 
   // Build HTML structure (matches screenshot layout roughly, neutral style)
   const html = `
-    <div id="gdtcalc-full" style="display:flex;gap:12px">
+    <div id="gdtcalc" style="display:flex;gap:12px">
       <div id="gdt-left" style="flex:0 0 380px;background:#ffffff;border-radius:6px;padding:12px;border:1px solid #e1e4e8;">
         <h2 style="margin:0 0 8px 0;font-size:18px">Game Dev Tycoon Calculator</h2>
 
