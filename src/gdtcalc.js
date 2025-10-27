@@ -88,17 +88,19 @@ window.__gdtcalc_data = {
 
 
 
-// === Part 2: UI builder (paste second) ===
+// === Part 2: UI builder (fixed with DOMContentLoaded wrapper) ===
+document.addEventListener("DOMContentLoaded", function () {
 
-// === Part 2: UI builder (fixed) ===
-document.addEventListener("DOMContentLoaded", function() {
+  // Create root container with GitHub-style neutral theme
   function ensureRoot() {
     let root = document.getElementById("gdtcalc-root");
     if (!root) {
       root = document.createElement("div");
       root.id = "gdtcalc-root";
-      document.body.insertBefore(root, document.body.firstChild);
+      // safer append instead of insertBefore
+      document.body.appendChild(root);
     }
+    // minimal neutral styling (you can override in repo CSS)
     root.style.fontFamily = "'Segoe UI', Roboto, Arial, sans-serif";
     root.style.background = "#f4f5f7";
     root.style.color = "#222";
@@ -111,17 +113,15 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   const root = ensureRoot();
-  if (document.getElementById("gdtcalc")) return;
 
   // If already present, bail (avoid duplicating)
-  if (document.getElementById("gdtcalc")) {
-    // already created
+  if (document.getElementById("gdtcalc-full")) {
     return;
   }
 
   // Build HTML structure (matches screenshot layout roughly, neutral style)
   const html = `
-    <div id="gdtcalc" style="display:flex;gap:12px">
+    <div id="gdtcalc-full" style="display:flex;gap:12px">
       <div id="gdt-left" style="flex:0 0 380px;background:#ffffff;border-radius:6px;padding:12px;border:1px solid #e1e4e8;">
         <h2 style="margin:0 0 8px 0;font-size:18px">Game Dev Tycoon Calculator</h2>
 
@@ -205,7 +205,6 @@ document.addEventListener("DOMContentLoaded", function() {
           <button id="gdt-save-btn" style="padding:8px 12px;background:#6f42c1;color:white;border:none;border-radius:4px;cursor:pointer">Save</button>
           <button id="gdt-load-btn" style="padding:8px 12px;background:#d73a49;color:white;border:none;border-radius:4px;cursor:pointer">Load</button>
         </div>
-
       </div>
 
       <div id="gdt-right" style="flex:1;background:#ffffff;border-radius:6px;padding:12px;border:1px solid #e1e4e8;">
@@ -226,7 +225,11 @@ document.addEventListener("DOMContentLoaded", function() {
         <div style="display:flex;gap:12px">
           <div style="flex:1">
             <div style="height:220px;background:#e9f0ef;border:1px solid #d7dedb;border-radius:4px"></div>
-            <div style="margin-top:8px;color:#555;font-size:13px">Tech <input id="gdt-tech" style="width:60px;margin-left:6px" readonly> Design <input id="gdt-design" style="width:60px;margin-left:6px" readonly> Bugs <input id="gdt-bugs" style="width:60px;margin-left:6px" readonly></div>
+            <div style="margin-top:8px;color:#555;font-size:13px">
+              Tech <input id="gdt-tech" style="width:60px;margin-left:6px" readonly>
+              Design <input id="gdt-design" style="width:60px;margin-left:6px" readonly>
+              Bugs <input id="gdt-bugs" style="width:60px;margin-left:6px" readonly>
+            </div>
           </div>
 
           <div style="width:240px">
@@ -238,14 +241,13 @@ document.addEventListener("DOMContentLoaded", function() {
             <div style="font-size:13px;margin-top:8px">Modifiers: <span id="gdt-mod-list" style="font-weight:700">-</span></div>
           </div>
         </div>
-
       </div>
     </div>
   `;
 
   root.innerHTML = html;
 
-  // Now create stage sliders UI (3 columns for Stage1, Stage2, Stage3)
+  // Build stage sliders
   const stageContainer = document.getElementById("gdt-stages");
   const stageDefs = [
     { title: "Stage 1", items: ["Gameplay","Engine","Story"] },
@@ -272,17 +274,17 @@ document.addEventListener("DOMContentLoaded", function() {
         <input id="${id}" type="range" min="0" max="100" value="50" style="width:100%"/>
       `;
       col.appendChild(wrapper);
-      // live update label
-      setTimeout(()=>{ // ensure element present
+      setTimeout(() => {
         const range = document.getElementById(id);
-        const label = document.getElementById(id+"-val");
-        range.addEventListener("input", ()=> label.innerText = range.value);
-      },0);
+        const label = document.getElementById(id + "-val");
+        range.addEventListener("input", () => (label.innerText = range.value));
+      }, 0);
     });
     stageContainer.appendChild(col);
   });
 
-})(); // end UI builder IIFE
+}); // end DOMContentLoaded wrapper
+
 
 
 
