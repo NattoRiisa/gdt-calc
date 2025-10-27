@@ -82,10 +82,16 @@ window.__gdtcalc_data = {
 };
 
 })(); // end Part 1 IIFE
+
+
+
+
+
+
 // === Part 2: UI builder (paste second) ===
 
-(function(){
-  // Create root container with GitHub-style neutral theme
+// === Part 2: UI builder (fixed) ===
+document.addEventListener("DOMContentLoaded", function() {
   function ensureRoot() {
     let root = document.getElementById("gdtcalc-root");
     if (!root) {
@@ -93,7 +99,6 @@ window.__gdtcalc_data = {
       root.id = "gdtcalc-root";
       document.body.insertBefore(root, document.body.firstChild);
     }
-    // minimal neutral styling (you can override in repo CSS)
     root.style.fontFamily = "'Segoe UI', Roboto, Arial, sans-serif";
     root.style.background = "#f4f5f7";
     root.style.color = "#222";
@@ -106,16 +111,17 @@ window.__gdtcalc_data = {
   }
 
   const root = ensureRoot();
+  if (document.getElementById("gdtcalc")) return;
 
   // If already present, bail (avoid duplicating)
-  if (document.getElementById("gdtcalc-full")) {
+  if (document.getElementById("gdtcalc")) {
     // already created
     return;
   }
 
   // Build HTML structure (matches screenshot layout roughly, neutral style)
   const html = `
-    <div id="gdtcalc-full" style="display:flex;gap:12px">
+    <div id="gdtcalc" style="display:flex;gap:12px">
       <div id="gdt-left" style="flex:0 0 380px;background:#ffffff;border-radius:6px;padding:12px;border:1px solid #e1e4e8;">
         <h2 style="margin:0 0 8px 0;font-size:18px">Game Dev Tycoon Calculator</h2>
 
@@ -277,6 +283,10 @@ window.__gdtcalc_data = {
   });
 
 })(); // end UI builder IIFE
+
+
+
+
 // === Part 3: Logic & wiring (paste third) ===
 
 (function(){
