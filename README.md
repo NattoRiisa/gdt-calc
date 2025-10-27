@@ -1,5 +1,9 @@
-# gdt-calc
-Game review score calculator for Game Dev Tycoon.
+# Disclaimer!
+The JS has been AI-generated to attempt to reflect on my patch of the Game Dev Tycoon!
+
+# - ORIGINAL TEXT -
+# GDT-Calculator
+Game review score calculator for Game Dev Tycoon. 
 
 # [Want to open the calculator? Click here.](http://rollersteaam.github.io/gdt-calc/)
 
