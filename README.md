@@ -1,5 +1,6 @@
 # Disclaimer!
 The JS has been AI-generated to attempt to reflect on my patch of the Game Dev Tycoon!
+(Attempt is not a great success obviously, if anyone would like to fork this to try to match this properly, be my guest!)
 
 # - ORIGINAL TEXT -
 # GDT-Calculator
